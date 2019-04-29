@@ -13,3 +13,6 @@ to output logging information to the console, but this is limited and there is n
 * import log4*.xsl files in own template using <pre>xsl:import</pre>
 * log4xslt.config.xsl: to configure error LEVEL and message FORMAT
 * (optional) common.variables.xsl: this can be also imported to provide useful string variables (this is being used in current example)
+
+# License
+MIT License (https://opensource.org/licenses/mit-license.php)
