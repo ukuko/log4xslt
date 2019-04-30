@@ -26,6 +26,3 @@ This library provides in same flavour as Log4j:
 # Configuration
 * log4xslt.config.xsl: to configure error LEVEL and message FORMAT
 * common.variables.xsl: provide useful string variables (they are being being used in provided example)
-
-# License
-MIT License (https://opensource.org/licenses/mit-license.php)
