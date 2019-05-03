@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <xsl:stylesheet version="2.0"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-	xmlns:fo="http://www.w3.org/1999/XSL/Format"
    >
 
+    <!-- this is not standalone
+    it depends from common.variables.xsl
+    -->
 <!-- TEMPLATES -->
    <!-- general info -->
 	<xsl:template name="common.INFO">
@@ -53,5 +55,16 @@
 		</xsl:call-template>
 -->
 	</xsl:template>
+
+    <!-- to output new lines in html-->
+    <xsl:template name="common.HTML.NewLines">
+        <xsl:param name="node"/>
+        <xsl:for-each select="tokenize($node, $_n)">
+            <xsl:value-of select="."/>
+            <xsl:if test="position() != last()">
+                <br/>
+            </xsl:if>
+        </xsl:for-each>
+    </xsl:template>
 
 </xsl:stylesheet>
