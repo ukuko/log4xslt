@@ -1,13 +1,36 @@
+<!--
+MIT License
+
+Copyright (c) 2017 Pablo Kurimoto (pablo.kurimoto@gmail.com)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+-->
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <xsl:stylesheet version="2.0"
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-   >
+				xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+>
 
-    <!-- this is not standalone
+	<!-- this is not standalone
     it depends from common.variables.xsl
     -->
 <!-- TEMPLATES -->
-   <!-- general info -->
+	<!-- general info -->
 	<xsl:template name="common.INFO">
 		<xsl:call-template name="logger.info">
 			<xsl:with-param name="msg">LOGGER level:<xsl:value-of select="$LOGGER.LEVEL" />
@@ -56,15 +79,15 @@
 -->
 	</xsl:template>
 
-    <!-- to output new lines in html-->
-    <xsl:template name="common.HTML.NewLines">
-        <xsl:param name="node"/>
-        <xsl:for-each select="tokenize($node, $_n)">
-            <xsl:value-of select="."/>
-            <xsl:if test="position() != last()">
-                <br/>
-            </xsl:if>
-        </xsl:for-each>
-    </xsl:template>
+	<!-- to output new lines in html-->
+	<xsl:template name="common.HTML.NewLines">
+		<xsl:param name="node"/>
+		<xsl:for-each select="tokenize($node, $_n)">
+			<xsl:value-of select="."/>
+			<xsl:if test="position() != last()">
+				<br/>
+			</xsl:if>
+		</xsl:for-each>
+	</xsl:template>
 
 </xsl:stylesheet>

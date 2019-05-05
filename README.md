@@ -1,6 +1,9 @@
 # About
 This project implements  in pure XSLT 2.0  some of the concepts introduced by Log4j (https://logging.apache.org/log4j/2.x/), a popular Java library for logging.
 
+# License
+MIT - See LICENSE
+
 # Details
 If your work with XSLT, then you know there is
 <pre>
