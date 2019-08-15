@@ -30,7 +30,7 @@ SOFTWARE.
     <xsl:import href="log4xslt.xsl"/>
     <xsl:import href="common.templates.xsl"/>
     <xsl:import href="common.variables.xsl"/>
-
+    <!-- this can be set from outside    -->
     <xsl:param name="LOGGER.LEVEL">ALL</xsl:param>
     <!-- possible values (according to log4j.dtd)
            ALL,TRACE,DEBUG,INFO,WARN,ERROR,FATAL,OFF,NULL
@@ -44,7 +44,7 @@ SOFTWARE.
 
         <xsl:if test="($position &lt; 8) and ($position >= $LOGGER.LEVEL.NR)">
 
-            <!-- TODO: adjust layout format
+            <!-- TODO: allow adjust layout format from outside
             it is possible to use any xslt intrinsic functions,
             known variables at time of running,
             and the message (msg) itself

@@ -26,7 +26,7 @@ SOFTWARE.
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 version="2.0">
     <!-- IMPORT -->
-    <xsl:import href="log4xslt.config.xsl"/>
+    <xsl:import href="../log4xslt.config.xsl"/>
 
     <!-- OUTPUT -->
     <xsl:output
@@ -35,8 +35,18 @@ SOFTWARE.
             indent="yes"/>
 
     <!-- PARAMETERS -->
+    <!-- these are defined by default in common.INFO template but it can be redefined here -->
+
+    <xsl:param name="p1"></xsl:param>
+    <xsl:param name="p2"></xsl:param>
+    <xsl:param name="p3">abcd</xsl:param>
+    <xsl:param name="p4"></xsl:param>
+    <xsl:param name="p5"></xsl:param>
 
     <!-- VARIABLES -->
+    <!-- for log4xslt -->
+    <xsl:param name="LOGGER.LEVEL">INFO</xsl:param>
+
     <xsl:variable name="aVar"/>
 
     <xsl:template match="/">
@@ -51,6 +61,9 @@ SOFTWARE.
         </xsl:call-template>
 
         <xsl:copy>
+            <xsl:call-template name="logger.error">
+                <xsl:with-param name="msg">just to show the level, not error actually</xsl:with-param>
+            </xsl:call-template>
             <xsl:apply-templates select="@*|node()"/>
         </xsl:copy>
     </xsl:template>

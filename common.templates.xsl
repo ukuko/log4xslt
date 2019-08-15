@@ -26,12 +26,20 @@ SOFTWARE.
 <xsl:stylesheet version="2.0"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
 >
+    <!-- defined by default -->
+    <xsl:param name="p1"></xsl:param>
+    <xsl:param name="p2"></xsl:param>
+    <xsl:param name="p3"></xsl:param>
+    <xsl:param name="p4"></xsl:param>
+    <xsl:param name="p5"></xsl:param>
 
     <!-- this is not standalone
     it depends from common.variables.xsl
     -->
 <!-- TEMPLATES -->
     <!-- general info -->
+    <!-- following parameters need too be defined in xsl -->
+
     <xsl:template name="common.INFO">
         <xsl:call-template name="logger.info">
             <xsl:with-param name="msg">LOGGER level:<xsl:value-of select="$LOGGER.LEVEL" />
