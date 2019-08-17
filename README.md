@@ -18,8 +18,9 @@ But this is limited and there is no more detailed logging mechanisms out of the 
 
 This was the reason what I wrote this.
 
-# License
-MIT - See LICENSE
+# Requirements
+This was tested with Saxon HE parser (http://saxon.sourceforge.net/)
+Any XSLT2.0 compliant parser should produce same output.
 
 # Installation
 For easiness you can add this project as git submodule of your project and use it from there
@@ -33,24 +34,20 @@ Already imported from above file are:
 * common.variables.xsl: provides useful string variables
 * common.templates.xsl: provides common templates
 
-# Requirements
-This was tested with Saxon HE parser (http://saxon.sourceforge.net/)
-Any XSLT2.0 compliant parser should produce same output.
-
 # Configuration
 ## Logger Level
 Set a parameter at the beginning of your XSLT with desired level:
 
 <xsl:param name="LOGGER.LEVEL">INFO</xsl:param>
 
-This will have precedence over what is set inside the library (level is ALL)
+This will have precedence over what is set inside the library (where level is ALL)
 
-Possible values (according to log4j.dtd) are:
+Possible values in order of visibility (taken from log4j.dtd) are:
 
 ALL,TRACE,DEBUG,INFO,WARN,ERROR,FATAL,OFF,NULL
 
 ## Parameters
-template common.INFO will look for up to 5 parameters (p1.. p5), which can be redefined at your XSLT. 
+Additionally, template common.INFO will look for up to 5 parameters (p1.. p5), which can be redefined at your XSLT. 
 
     <xsl:param name="p1"></xsl:param>
     <xsl:param name="p2"></xsl:param>
@@ -69,11 +66,12 @@ See inside test subfolder: example.xml and example.xsl files
 example.xsl : 
 * adjust param LOGGER.LEVEL to different levels to see output.
 * adjust params p1.. p5 to see how common.INFO template works
-* java -jar <path to xslt processor> -s:example.xml -xsl:example.xsl  -o:example-output.xml
 
 ## sample output
-output
+
 <pre>
+java -jar <path to xslt processor> -s:example.xml -xsl:example.xsl  -o:example-output.xml
+
 2019-08-15+02:00        09:54:57.309876+02:00   INFO    LOGGER level:INFO
 2019-08-15+02:00        09:54:57.309876+02:00   INFO    XSLT version:3.0
 2019-08-15+02:00        09:54:57.309876+02:00   INFO    XSLT Processor:Saxonica-HE 9.9.1.1
@@ -90,3 +88,6 @@ output
 2019-08-15+02:00        09:54:57.309876+02:00   WARN    this is just a copy
 
 </pre>
+
+# License
+MIT - See LICENSE
