@@ -32,6 +32,7 @@ SOFTWARE.
     <xsl:param name="p3"></xsl:param>
     <xsl:param name="p4"></xsl:param>
     <xsl:param name="p5"></xsl:param>
+    <xsl:param name="p6"></xsl:param>
 
     <!-- this is not standalone
     it depends from common.variables.xsl
@@ -71,6 +72,10 @@ SOFTWARE.
         </xsl:call-template>
         <xsl:call-template name="logger.info">
             <xsl:with-param name="msg">param $p5:<xsl:value-of select="$p5" />
+            </xsl:with-param>
+        </xsl:call-template>
+        <xsl:call-template name="logger.info">
+            <xsl:with-param name="msg">param $p6:<xsl:value-of select="$p6" />
             </xsl:with-param>
         </xsl:call-template>
         <!--
