@@ -33,11 +33,10 @@ SOFTWARE.
       indent="yes"
       omit-xml-declaration="yes"
       />
-    <!-- VARIABLES -->
-<xsl:variable name="_s"> </xsl:variable>
-<!-- <xsl:variable name="_s"><xsl:text> </xsl:text></xsl:variable> -->
-<xsl:variable name="_n" select="'&#10;'"/>
-<xsl:variable name="_t" select="'&#x09;'"/>
+   <!-- VARIABLES -->
+<xsl:variable name="_s" select="'&#160;'"/><!--  nbsp -->
+<xsl:variable name="_n" select="'&#10;'"/><!--  new line -->
+<xsl:variable name="_t" select="'&#x09;'"/><!--  tab -->
 <xsl:variable name="_dot" select="'&#183; '"/><!--  dot + space -->
 <xsl:variable name="_dp" select="': '"/><!--  : + space -->
 
